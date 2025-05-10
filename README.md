@@ -1,2 +1,2 @@
-# html-jsx
-Typed HTML templates using JSX
+# html-jsx: Typed HTML templates using JSX
+
