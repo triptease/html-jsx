@@ -5,15 +5,33 @@
   "type": "module",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "clean": "rm -rf dist"
   },
   "exports": {
     ".": "./dist/index.js",
     "./jsx-runtime": "./dist/jsx-runtime.js",
     "./jsx-dev-runtime": "./dist/jsx-dev-runtime.js"
   },
-  "peerDependencies": {
-    "typescript": "^5.8.3"
+  "license": "MIT",
+  "author": "Triptease",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/triptease/html-jsx"
   },
-  "packageManager": "pnpm@10.6.5+sha512.cdf928fca20832cd59ec53826492b7dc25dc524d4370b6b4adbf65803d32efaa6c1c88147c0ae4e8d579a6c9eec715757b50d4fa35eea179d868eada4ed043af"
+  "bugs": {
+    "url": "https://github.com/triptease/html-jsx/issues"
+  },
+  "homepage": "https://github.com/triptease/html-jsx",
+  "keywords": [
+    "jsx",
+    "html",
+    "template",
+    "typescript"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
 }

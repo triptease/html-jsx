@@ -6,11 +6,13 @@ settings:
 
 importers:
 
-  generate:
-    dependencies:
+  .:
+    devDependencies:
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
+
+  generate:
     devDependencies:
       '@types/node':
         specifier: ^22.15.17
@@ -25,17 +27,9 @@ importers:
         specifier: ^4.19.4
         version: 4.19.4
 
-  src:
-    dependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
+  src: {}
 
   test:
-    dependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
     devDependencies:
       '@triptease/html-jsx':
         specifier: workspace:*
