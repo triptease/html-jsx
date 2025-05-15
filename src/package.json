@@ -1,39 +1,39 @@
 {
   "name": "@triptease/html-jsx",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "JSX implementation for generating static HTML",
-  "type": "module",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist",
-    "prepublishOnly": "pnpm run clean && pnpm run build"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "exports": {
-    ".": "./dist/index.js",
-    "./jsx-runtime": "./dist/jsx-runtime.js",
-    "./jsx-dev-runtime": "./dist/jsx-dev-runtime.js"
-  },
   "license": "MIT",
   "author": "Triptease",
   "repository": {
     "type": "git",
     "url": "https://github.com/triptease/html-jsx"
   },
+  "homepage": "https://github.com/triptease/html-jsx",
   "bugs": {
     "url": "https://github.com/triptease/html-jsx/issues"
   },
-  "homepage": "https://github.com/triptease/html-jsx",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./jsx-runtime": "./dist/jsx-runtime.js",
+    "./jsx-dev-runtime": "./dist/jsx-dev-runtime.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
+  },
   "keywords": [
     "jsx",
     "html",
     "template",
     "typescript"
-  ],
-  "files": [
-    "dist"
   ]
 }

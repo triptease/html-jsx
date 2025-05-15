@@ -1,6 +1,6 @@
 {
   "name": "@triptease/html-jsx-test",
-  "version": "0.1.0",
+  "private": true,
   "description": "Module for running tests on html-jsx",
   "type": "module",
   "scripts": {

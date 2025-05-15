@@ -1,6 +1,6 @@
 {
   "name": "@triptease/html-jsx-generate",
-  "version": "0.1.0",
+  "private": true,
   "description": "Source code generation for html-jsx",
   "type": "module",
   "scripts": {
