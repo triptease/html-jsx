@@ -1,4 +1,4 @@
-import {raw, Children, PhrasingContentCategory, Renderable} from '@triptease/html-jsx';
+import {Children, PropsWithChildren, raw, Renderable} from '@triptease/html-jsx';
 import {jsx} from "@triptease/html-jsx/jsx-runtime";
 
 describe('elements', () => {
@@ -147,7 +147,7 @@ describe('custom components', () => {
     });
 
     it('renders a component with children', () => {
-        function ButtonInDiv({className, children}: { className?: string, children: PhrasingContentCategory[] }) {
+        function ButtonInDiv({className, children}: PropsWithChildren<{ className?: string }>) {
             return (
                 <div>
                     <button class={className}>{children}</button>
