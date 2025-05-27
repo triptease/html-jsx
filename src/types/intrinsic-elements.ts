@@ -189,52 +189,7 @@ export type BooleanAttribute = "true" | "false" | boolean;
 export interface AnyContentCategory {
 }
 
-export interface FlowContentCategory {
-}
-
-export interface PhrasingContentCategory {
-}
-
-export interface InteractiveContentCategory {
-}
-
-export interface PalpableContentCategory {
-}
-
-export interface SectioningContentCategory {
-}
-
-export interface EmbeddedContentCategory {
-}
-
-export interface MetadataContentCategory {
-}
-
-export interface NoneContentCategory {
-}
-
-export interface ListedContentCategory {
-}
-
-export interface LabelableContentCategory {
-}
-
-export interface SubmittableContentCategory {
-}
-
-export interface FormAssociatedContentCategory {
-}
-
-export interface HeadingContentCategory {
-}
-
-export interface ResettableContentCategory {
-}
-
-export interface ScriptSupportingContentCategory {
-}
-
-export interface HtmlTagA extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, InteractiveContentCategory, PalpableContentCategory {
+export interface HtmlTagA extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     download?: StringAttribute;
     href?: StringAttribute;
     hreflang?: StringAttribute;
@@ -243,19 +198,19 @@ export interface HtmlTagA extends GlobalAttributes, AriaAttributes, GlobalEventH
     rel?: StringAttribute;
     target?: StringAttribute;
     type?: StringAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagAbbr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagAbbr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     title?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagAddress extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagAddress extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagArea extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory {
+export interface HtmlTagArea extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     alt?: StringAttribute;
     coords?: NumericAttribute;
     download?: StringAttribute;
@@ -265,18 +220,18 @@ export interface HtmlTagArea extends GlobalAttributes, AriaAttributes, GlobalEve
     rel?: StringAttribute;
     shape?: StringAttribute;
     target?: StringAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagArticle extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, SectioningContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagArticle extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagAside extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, SectioningContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagAside extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagAudio extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, InteractiveContentCategory, PalpableContentCategory {
+export interface HtmlTagAudio extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     autoplay?: BooleanAttribute;
     controls?: BooleanAttribute;
     crossorigin?: StringAttribute;
@@ -284,42 +239,42 @@ export interface HtmlTagAudio extends GlobalAttributes, AriaAttributes, GlobalEv
     muted?: BooleanAttribute;
     preload?: StringAttribute;
     src?: StringAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: HtmlTagSource | HtmlTagTrack | AnyContentCategory | (HtmlTagSource | HtmlTagTrack | AnyContentCategory)[];
 }
 
-export interface HtmlTagB extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagB extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagBase extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory {
+export interface HtmlTagBase extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     href?: StringAttribute;
     target?: StringAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagBdi extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagBdi extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagBdo extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagBdo extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     dir?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagBlockquote extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
+export interface HtmlTagBlockquote extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     cite?: StringAttribute;
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagBody extends GlobalAttributes, AriaAttributes, BodyEventHandlers, NoneContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagBody extends GlobalAttributes, AriaAttributes, BodyEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagBr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory {
-    children?: never | (never)[];
+export interface HtmlTagBr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: never;
 }
 
-export interface HtmlTagButton extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, InteractiveContentCategory, ListedContentCategory, LabelableContentCategory, SubmittableContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagButton extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     command?: StringAttribute;
     commandfor?: StringAttribute;
     disabled?: BooleanAttribute;
@@ -334,117 +289,117 @@ export interface HtmlTagButton extends GlobalAttributes, AriaAttributes, GlobalE
     popovertargetaction?: StringAttribute;
     type?: StringAttribute;
     value?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagCanvas extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, PalpableContentCategory {
+export interface HtmlTagCanvas extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     height?: NumericAttribute;
     width?: NumericAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagCaption extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagCaption extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagCite extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagCite extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagCode extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagCode extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagCol extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagCol extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     span?: NumericAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagColgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagColgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     span?: NumericAttribute;
     children?: HtmlTagCol | HtmlTagTemplate | (HtmlTagCol | HtmlTagTemplate)[];
 }
 
-export interface HtmlTagData extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagData extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     value?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagDatalist extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory {
-    children?: PhrasingContentCategory | TextContent | HtmlTagOption | ScriptSupportingContentCategory | (PhrasingContentCategory | TextContent | HtmlTagOption | ScriptSupportingContentCategory)[];
+export interface HtmlTagDatalist extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | HtmlTagOption | (AnyContentCategory | HtmlTagOption)[];
 }
 
-export interface HtmlTagDd extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagDd extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagDel extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagDel extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     cite?: StringAttribute;
     datetime?: StringAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagDetails extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, InteractiveContentCategory, PalpableContentCategory {
+export interface HtmlTagDetails extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     name?: StringAttribute;
     open?: BooleanAttribute;
-    children?: HtmlTagSummary | FlowContentCategory | TextContent | (HtmlTagSummary | FlowContentCategory | TextContent)[];
+    children?: HtmlTagSummary | AnyContentCategory | (HtmlTagSummary | AnyContentCategory)[];
 }
 
-export interface HtmlTagDfn extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagDfn extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     title?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagDialog extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory {
+export interface HtmlTagDialog extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     closedby?: StringAttribute;
     open?: BooleanAttribute;
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagDiv extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagDiv extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagDl extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: HtmlTagDt | HtmlTagDd | HtmlTagDiv | ScriptSupportingContentCategory | (HtmlTagDt | HtmlTagDd | HtmlTagDiv | ScriptSupportingContentCategory)[];
+export interface HtmlTagDl extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagDt | HtmlTagDd | HtmlTagDiv | AnyContentCategory | (HtmlTagDt | HtmlTagDd | HtmlTagDiv | AnyContentCategory)[];
 }
 
-export interface HtmlTagDt extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagDt extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagEm extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagEm extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagEmbed extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, InteractiveContentCategory, PalpableContentCategory {
+export interface HtmlTagEmbed extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     height?: NumericAttribute;
     src?: StringAttribute;
     type?: StringAttribute;
     width?: NumericAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagFieldset extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, ListedContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagFieldset extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     disabled?: BooleanAttribute;
     form?: StringAttribute;
     name?: StringAttribute;
-    children?: HtmlTagLegend | FlowContentCategory | TextContent | (HtmlTagLegend | FlowContentCategory | TextContent)[];
+    children?: HtmlTagLegend | AnyContentCategory | (HtmlTagLegend | AnyContentCategory)[];
 }
 
-export interface HtmlTagFigcaption extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagFigcaption extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagFigure extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: HtmlTagFigcaption | FlowContentCategory | TextContent | (HtmlTagFigcaption | FlowContentCategory | TextContent)[];
+export interface HtmlTagFigure extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagFigcaption | AnyContentCategory | (HtmlTagFigcaption | AnyContentCategory)[];
 }
 
-export interface HtmlTagFooter extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagFooter extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagForm extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
+export interface HtmlTagForm extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     acceptCharset?: StringAttribute;
     action?: StringAttribute;
     autocomplete?: StringAttribute;
@@ -453,58 +408,58 @@ export interface HtmlTagForm extends GlobalAttributes, AriaAttributes, GlobalEve
     name?: StringAttribute;
     novalidate?: BooleanAttribute;
     target?: StringAttribute;
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagH1 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, HeadingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagH1 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagH2 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, HeadingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagH2 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagH3 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, HeadingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagH3 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagH4 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, HeadingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagH4 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagH5 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, HeadingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagH5 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagH6 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, HeadingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagH6 extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagHead extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: MetadataContentCategory | (MetadataContentCategory)[];
+export interface HtmlTagHead extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagHeader extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagHeader extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagHgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | ScriptSupportingContentCategory | (HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | ScriptSupportingContentCategory)[];
+export interface HtmlTagHgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | AnyContentCategory | (HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | AnyContentCategory)[];
 }
 
-export interface HtmlTagHr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory {
-    children?: never | (never)[];
+export interface HtmlTagHr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: never;
 }
 
-export interface HtmlTagHtml extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagHtml extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     children?: HtmlTagHead | HtmlTagBody | (HtmlTagHead | HtmlTagBody)[];
 }
 
-export interface HtmlTagI extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagI extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagIframe extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, InteractiveContentCategory, PalpableContentCategory {
+export interface HtmlTagIframe extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     allow?: StringAttribute;
     allowfullscreen?: BooleanAttribute;
     height?: NumericAttribute;
@@ -515,10 +470,10 @@ export interface HtmlTagIframe extends GlobalAttributes, AriaAttributes, GlobalE
     src?: StringAttribute;
     srcdoc?: StringAttribute;
     width?: NumericAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagImg extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, InteractiveContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagImg extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     alt?: StringAttribute;
     crossorigin?: StringAttribute;
     decoding?: StringAttribute;
@@ -532,10 +487,10 @@ export interface HtmlTagImg extends GlobalAttributes, AriaAttributes, GlobalEven
     srcset?: StringAttribute;
     usemap?: StringAttribute;
     width?: NumericAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagInput extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, InteractiveContentCategory, ListedContentCategory, LabelableContentCategory, SubmittableContentCategory, ResettableContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagInput extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     accept?: StringAttribute;
     alpha?: BooleanAttribute;
     alt?: StringAttribute;
@@ -571,34 +526,34 @@ export interface HtmlTagInput extends GlobalAttributes, AriaAttributes, GlobalEv
     type?: StringAttribute;
     value?: StringAttribute;
     width?: NumericAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagIns extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagIns extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     cite?: StringAttribute;
     datetime?: StringAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagKbd extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagKbd extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagLabel extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, InteractiveContentCategory, PalpableContentCategory {
+export interface HtmlTagLabel extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     for?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagLegend extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: PhrasingContentCategory | TextContent | HeadingContentCategory | (PhrasingContentCategory | TextContent | HeadingContentCategory)[];
+export interface HtmlTagLegend extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagLi extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagLi extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     value?: NumericAttribute;
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagLink extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory, FlowContentCategory, PhrasingContentCategory {
+export interface HtmlTagLink extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     as?: StringAttribute;
     blocking?: StringAttribute;
     color?: StringAttribute;
@@ -616,77 +571,77 @@ export interface HtmlTagLink extends GlobalAttributes, AriaAttributes, GlobalEve
     sizes?: StringAttribute;
     title?: StringAttribute;
     type?: StringAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagMain extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagMain extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagMap extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagMap extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     name?: StringAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: AnyContentCategory | HtmlTagArea | (AnyContentCategory | HtmlTagArea)[];
 }
 
-export interface HtmlTagMark extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagMark extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagMenu extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: HtmlTagLi | ScriptSupportingContentCategory | (HtmlTagLi | ScriptSupportingContentCategory)[];
+export interface HtmlTagMenu extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagLi | AnyContentCategory | (HtmlTagLi | AnyContentCategory)[];
 }
 
-export interface HtmlTagMeta extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory, FlowContentCategory, PhrasingContentCategory {
+export interface HtmlTagMeta extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     charset?: StringAttribute;
     content?: StringAttribute;
     httpEquiv?: StringAttribute;
     media?: StringAttribute;
     name?: StringAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagMeter extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, LabelableContentCategory, PalpableContentCategory {
+export interface HtmlTagMeter extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     high?: NumericAttribute;
     low?: NumericAttribute;
     max?: NumericAttribute;
     min?: NumericAttribute;
     optimum?: NumericAttribute;
     value?: NumericAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagNav extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, SectioningContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagNav extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagNoscript extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory, FlowContentCategory, PhrasingContentCategory {
-    children?: never | (never)[];
+export interface HtmlTagNoscript extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: never;
 }
 
-export interface HtmlTagObject extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, InteractiveContentCategory, ListedContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagObject extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     data?: StringAttribute;
     form?: StringAttribute;
     height?: NumericAttribute;
     name?: StringAttribute;
     type?: StringAttribute;
     width?: NumericAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagOl extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
+export interface HtmlTagOl extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     reversed?: BooleanAttribute;
     start?: NumericAttribute;
     type?: StringAttribute;
-    children?: HtmlTagLi | ScriptSupportingContentCategory | (HtmlTagLi | ScriptSupportingContentCategory)[];
+    children?: HtmlTagLi | AnyContentCategory | (HtmlTagLi | AnyContentCategory)[];
 }
 
-export interface HtmlTagOptgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagOptgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     disabled?: BooleanAttribute;
     label?: StringAttribute;
-    children?: HtmlTagOption | ScriptSupportingContentCategory | (HtmlTagOption | ScriptSupportingContentCategory)[];
+    children?: HtmlTagOption | AnyContentCategory | (HtmlTagOption | AnyContentCategory)[];
 }
 
-export interface HtmlTagOption extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagOption extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     disabled?: BooleanAttribute;
     label?: StringAttribute;
     selected?: BooleanAttribute;
@@ -694,57 +649,57 @@ export interface HtmlTagOption extends GlobalAttributes, AriaAttributes, GlobalE
     children?: TextContent | (TextContent)[];
 }
 
-export interface HtmlTagOutput extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, ListedContentCategory, LabelableContentCategory, ResettableContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagOutput extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     for?: StringAttribute;
     form?: StringAttribute;
     name?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagP extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagP extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagPicture extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, PalpableContentCategory {
-    children?: HtmlTagSource | ScriptSupportingContentCategory | (HtmlTagSource | ScriptSupportingContentCategory)[];
+export interface HtmlTagPicture extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagSource | AnyContentCategory | (HtmlTagSource | AnyContentCategory)[];
 }
 
-export interface HtmlTagPre extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagPre extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagProgress extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, LabelableContentCategory, PalpableContentCategory {
+export interface HtmlTagProgress extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     max?: NumericAttribute;
     value?: NumericAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagQ extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagQ extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     cite?: StringAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagRp extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagRp extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     children?: TextContent | (TextContent)[];
 }
 
-export interface HtmlTagRt extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagRt extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagRuby extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | HtmlTagRt | HtmlTagRp | (PhrasingContentCategory | TextContent | HtmlTagRt | HtmlTagRp)[];
+export interface HtmlTagRuby extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | HtmlTagRt | HtmlTagRp | (AnyContentCategory | HtmlTagRt | HtmlTagRp)[];
 }
 
-export interface HtmlTagS extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagS extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagSamp extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagSamp extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagScript extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory, FlowContentCategory, PhrasingContentCategory, ScriptSupportingContentCategory {
+export interface HtmlTagScript extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     async?: BooleanAttribute;
     blocking?: StringAttribute;
     crossorigin?: StringAttribute;
@@ -758,15 +713,15 @@ export interface HtmlTagScript extends GlobalAttributes, AriaAttributes, GlobalE
     children?: TextContent | (TextContent)[];
 }
 
-export interface HtmlTagSearch extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagSearch extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagSection extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, SectioningContentCategory, PalpableContentCategory {
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+export interface HtmlTagSection extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagSelect extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, InteractiveContentCategory, ListedContentCategory, LabelableContentCategory, SubmittableContentCategory, ResettableContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagSelect extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     autocomplete?: StringAttribute;
     disabled?: BooleanAttribute;
     form?: StringAttribute;
@@ -774,19 +729,19 @@ export interface HtmlTagSelect extends GlobalAttributes, AriaAttributes, GlobalE
     name?: StringAttribute;
     required?: BooleanAttribute;
     size?: NumericAttribute;
-    children?: HtmlTagOption | HtmlTagOptgroup | ScriptSupportingContentCategory | (HtmlTagOption | HtmlTagOptgroup | ScriptSupportingContentCategory)[];
+    children?: HtmlTagOption | HtmlTagOptgroup | AnyContentCategory | (HtmlTagOption | HtmlTagOptgroup | AnyContentCategory)[];
 }
 
-export interface HtmlTagSlot extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory {
+export interface HtmlTagSlot extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     name?: StringAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagSmall extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagSmall extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagSource extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagSource extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     height?: NumericAttribute;
     media?: StringAttribute;
     sizes?: StringAttribute;
@@ -794,61 +749,61 @@ export interface HtmlTagSource extends GlobalAttributes, AriaAttributes, GlobalE
     srcset?: StringAttribute;
     type?: StringAttribute;
     width?: NumericAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagSpan extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagSpan extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagStrong extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagStrong extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagStyle extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory {
+export interface HtmlTagStyle extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     blocking?: StringAttribute;
     media?: StringAttribute;
     title?: StringAttribute;
     children?: TextContent | (TextContent)[];
 }
 
-export interface HtmlTagSub extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagSub extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagSummary extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: PhrasingContentCategory | TextContent | HeadingContentCategory | (PhrasingContentCategory | TextContent | HeadingContentCategory)[];
+export interface HtmlTagSummary extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagSup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagSup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagTable extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: HtmlTagCaption | HtmlTagColgroup | HtmlTagThead | HtmlTagTbody | HtmlTagTfoot | HtmlTagTr | ScriptSupportingContentCategory | (HtmlTagCaption | HtmlTagColgroup | HtmlTagThead | HtmlTagTbody | HtmlTagTfoot | HtmlTagTr | ScriptSupportingContentCategory)[];
+export interface HtmlTagTable extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagCaption | HtmlTagColgroup | HtmlTagThead | HtmlTagTbody | HtmlTagTfoot | HtmlTagTr | AnyContentCategory | (HtmlTagCaption | HtmlTagColgroup | HtmlTagThead | HtmlTagTbody | HtmlTagTfoot | HtmlTagTr | AnyContentCategory)[];
 }
 
-export interface HtmlTagTbody extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: HtmlTagTr | ScriptSupportingContentCategory | (HtmlTagTr | ScriptSupportingContentCategory)[];
+export interface HtmlTagTbody extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagTr | AnyContentCategory | (HtmlTagTr | AnyContentCategory)[];
 }
 
-export interface HtmlTagTd extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagTd extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     colspan?: NumericAttribute;
     headers?: StringAttribute;
     rowspan?: NumericAttribute;
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagTemplate extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory, FlowContentCategory, PhrasingContentCategory, ScriptSupportingContentCategory {
+export interface HtmlTagTemplate extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     shadowrootclonable?: BooleanAttribute;
     shadowrootcustomelementregistry?: BooleanAttribute;
     shadowrootdelegatesfocus?: BooleanAttribute;
     shadowrootmode?: StringAttribute;
     shadowrootserializable?: BooleanAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagTextarea extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, InteractiveContentCategory, ListedContentCategory, LabelableContentCategory, SubmittableContentCategory, ResettableContentCategory, FormAssociatedContentCategory, PalpableContentCategory {
+export interface HtmlTagTextarea extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     autocomplete?: StringAttribute;
     cols?: NumericAttribute;
     dirname?: StringAttribute;
@@ -865,58 +820,58 @@ export interface HtmlTagTextarea extends GlobalAttributes, AriaAttributes, Globa
     children?: TextContent | (TextContent)[];
 }
 
-export interface HtmlTagTfoot extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: HtmlTagTr | ScriptSupportingContentCategory | (HtmlTagTr | ScriptSupportingContentCategory)[];
+export interface HtmlTagTfoot extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagTr | AnyContentCategory | (HtmlTagTr | AnyContentCategory)[];
 }
 
-export interface HtmlTagTh extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, InteractiveContentCategory {
+export interface HtmlTagTh extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     abbr?: StringAttribute;
     colspan?: NumericAttribute;
     headers?: StringAttribute;
     rowspan?: NumericAttribute;
     scope?: StringAttribute;
-    children?: FlowContentCategory | TextContent | (FlowContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagThead extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: HtmlTagTr | ScriptSupportingContentCategory | (HtmlTagTr | ScriptSupportingContentCategory)[];
+export interface HtmlTagThead extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagTr | AnyContentCategory | (HtmlTagTr | AnyContentCategory)[];
 }
 
-export interface HtmlTagTime extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
+export interface HtmlTagTime extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     datetime?: NumericAttribute;
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagTitle extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, MetadataContentCategory {
+export interface HtmlTagTitle extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     children?: TextContent | (TextContent)[];
 }
 
-export interface HtmlTagTr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
-    children?: HtmlTagTh | HtmlTagTd | ScriptSupportingContentCategory | (HtmlTagTh | HtmlTagTd | ScriptSupportingContentCategory)[];
+export interface HtmlTagTr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagTh | HtmlTagTd | AnyContentCategory | (HtmlTagTh | HtmlTagTd | AnyContentCategory)[];
 }
 
-export interface HtmlTagTrack extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, NoneContentCategory {
+export interface HtmlTagTrack extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     default?: BooleanAttribute;
     kind?: StringAttribute;
     label?: StringAttribute;
     src?: StringAttribute;
     srclang?: StringAttribute;
-    children?: never | (never)[];
+    children?: never;
 }
 
-export interface HtmlTagU extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagU extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagUl extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PalpableContentCategory {
-    children?: HtmlTagLi | ScriptSupportingContentCategory | (HtmlTagLi | ScriptSupportingContentCategory)[];
+export interface HtmlTagUl extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: HtmlTagLi | AnyContentCategory | (HtmlTagLi | AnyContentCategory)[];
 }
 
-export interface HtmlTagVar extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, PalpableContentCategory {
-    children?: PhrasingContentCategory | TextContent | (PhrasingContentCategory | TextContent)[];
+export interface HtmlTagVar extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
-export interface HtmlTagVideo extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory, EmbeddedContentCategory, InteractiveContentCategory, PalpableContentCategory {
+export interface HtmlTagVideo extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     autoplay?: BooleanAttribute;
     controls?: BooleanAttribute;
     crossorigin?: StringAttribute;
@@ -928,11 +883,11 @@ export interface HtmlTagVideo extends GlobalAttributes, AriaAttributes, GlobalEv
     preload?: StringAttribute;
     src?: StringAttribute;
     width?: NumericAttribute;
-    children?: AnyContentCategory | TextContent | (AnyContentCategory | TextContent)[];
+    children?: HtmlTagSource | HtmlTagTrack | AnyContentCategory | (HtmlTagSource | HtmlTagTrack | AnyContentCategory)[];
 }
 
-export interface HtmlTagWbr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers, FlowContentCategory, PhrasingContentCategory {
-    children?: never | (never)[];
+export interface HtmlTagWbr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: never;
 }
 
 export namespace JSX {

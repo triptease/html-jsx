@@ -17,7 +17,7 @@ export function raw(html: string): Raw {
 
 export class Element implements Renderable {
     constructor(
-        private readonly tagName: string | null,
+        readonly tagName: string | null,
         private readonly attributes: Attributes | null,
         private readonly children: Node[],
     ) {
