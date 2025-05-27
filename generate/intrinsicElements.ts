@@ -66,7 +66,7 @@ export async function intrinsicElements(
   elements: Element[],
   attributesByElement: Map<string, Attribute[]>,
 ) {
-  const sourceFile = project.createSourceFile('../src/types/intrinsic-elements.ts', {}, { overwrite: true });
+  const sourceFile = project.createSourceFile('../src/elements/intrinsic-elements.ts', {}, { overwrite: true });
 
   const ariaAttributes: string[] = JSON.parse(fs.readFileSync('aria-attributes.json', 'utf-8'));
   sourceFile.addInterface({

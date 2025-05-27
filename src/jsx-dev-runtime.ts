@@ -1,6 +1,8 @@
-import { Element, jsx, JSXComponent, jsxs } from './jsx-runtime.js';
-import { AttributesWithChildren, Fragment } from './types/base.js';
-import { contentCategories } from './content-categories.js';
+import { jsx, JSXComponent, jsxs } from './jsx-runtime.js';
+import { AttributesWithChildren, Fragment } from './elements/types.js';
+import { contentCategories } from './elements/content-categories.js';
+
+import { Element } from './elements/renderable.js';
 
 export { jsx, jsxs, Fragment };
 
@@ -26,7 +28,7 @@ function validateChild(child: Element, allowedChildren: Set<string>, type: strin
 
 export function jsxDEV(
   type: string | JSXComponent | typeof Fragment,
-  props: AttributesWithChildren | null, //Children is Element | Element[] not Node | Node[] I think
+  props: AttributesWithChildren | null,
   key?: string,
   isStaticChildren?: boolean,
   source?: Source,

@@ -1,4 +1,5 @@
-export * from './types/intrinsic-elements.js';
-export { raw } from './jsx-runtime.js';
-export { PropsWithChildren, Children, Node, Fragment } from './types/base.js';
-export { contentCategories } from './content-categories.js';
+export * from './elements/intrinsic-elements.js';
+export { PropsWithChildren, Children, Node, Fragment } from './elements/types.js';
+export { contentCategories } from './elements/content-categories.js';
+
+export { raw } from './elements/renderable.js';

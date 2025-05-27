@@ -2,8 +2,10 @@ import { Project, VariableDeclarationKind } from 'ts-morph';
 import { format, Options } from 'prettier';
 import { Element } from './types.js';
 
+const filePath = '../src/elements/content-categories.ts';
+
 export async function contentCategories(project: Project, prettierConfig: Options, elements: Element[]) {
-  const contentCategoriesFile = project.createSourceFile('../src/content-categories.ts', {}, { overwrite: true });
+  const contentCategoriesFile = project.createSourceFile(filePath, {}, { overwrite: true });
 
   contentCategoriesFile.addVariableStatement({
     isExported: true,
