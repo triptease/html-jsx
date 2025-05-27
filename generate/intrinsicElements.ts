@@ -34,29 +34,27 @@ function typeForElement(element: Element) {
   return kebabToPascalCase(`html-tag-${element.name}`);
 }
 
-function getChildType(element: Element, elements: Element[]) {
+function childrenType(element: Element, elements: Element[]) {
   const allContentCategories = new Set(elements.flatMap((e) => Array.from(e.categories)));
-  //TODO: Reduce can be used here
-  const childTypes = [
-    ...new Set(
-      Array.from(element.children).flatMap((child) => {
-        if (allContentCategories.has(child) || child === 'transparent') {
-          return ['AnyContentCategory'];
-        } else if (child === 'text') {
-          return ['TextContent'];
-        } else {
-          const element = elements.find((e) => e.name === child);
-          if (element) {
-            return [typeForElement(element)];
-          } else {
-            return [];
-          }
-        }
-      }),
-    ),
-  ];
-
-  return childTypes.length === 0 ? 'never' : `${childTypes.join(' | ')} | (${childTypes.join(' | ')})[]`;
+  const childTypes = [...element.children].reduce((types, child) => {
+    if (allContentCategories.has(child) || child === 'transparent') {
+      return types.add('AnyContentCategory');
+    } else if (child === 'text') {
+      return types.add('TextContent');
+    } else {
+      const element = elements.find((e) => e.name === child);
+      if (element) {
+        const type = typeForElement(element);
+        return types.add(type);
+      }
+      return types;
+    }
+  }, new Set<string>());
+  if (childTypes.size === 0) return 'never';
+  else {
+    const allTypes = [...childTypes].join(' | ');
+    return `${allTypes} | (${allTypes})[]`;
+  }
 }
 
 export async function intrinsicElements(
@@ -158,7 +156,7 @@ export async function intrinsicElements(
         })),
         {
           name: 'children',
-          type: getChildType(element, elements),
+          type: childrenType(element, elements),
           hasQuestionToken: true,
         },
       ],
