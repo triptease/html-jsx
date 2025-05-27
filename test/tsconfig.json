@@ -10,11 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "jsxImportSource": "@triptease/html-jsx",
-    "types": [
-      "vitest/globals"
-    ]
+    "types": ["vitest/globals"]
   },
-  "include": [
-    "./**/*.ts", "./**/*.tsx"
-  ]
+  "include": ["./**/*.ts", "./**/*.tsx"]
 }
