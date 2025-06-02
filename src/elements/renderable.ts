@@ -5,9 +5,7 @@ export interface Renderable {
 }
 
 export class Raw implements Renderable {
-  constructor(private readonly value: string) {
-    console.log('constructing ' + value);
-  }
+  constructor(private readonly value: string) {}
 
   render = () => this.value;
   toString = () => `Raw[${this.render()}]`;
