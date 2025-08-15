@@ -155,7 +155,7 @@ describe('custom components', () => {
     function ButtonInDiv({ className, children }: PropsWithChildren<{ className?: string }>) {
       return (
         <div>
-          <button class={className}>{children}</button>
+          <div class={className}>{children}</div>
         </div>
       );
     }
@@ -167,7 +167,7 @@ describe('custom components', () => {
           <p>me</p>
         </ButtonInDiv>
       )}`,
-    ).toEqual('<div><button><p>Click</p><p>me</p></button></div>');
+    ).toEqual('<div><div><p>Click</p><p>me</p></div></div>');
   });
 });
 
