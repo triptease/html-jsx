@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { transpileScript, transpileAttr } from '@triptease/html-jsx/jsx-runtime';
+import { transpileScript, transpileAttr } from '../src/index.js';
 import ts from 'typescript';
 
 describe('transpiles script', () => {

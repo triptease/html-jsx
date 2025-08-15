@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { Children, PropsWithChildren, Renderable, raw } from '@triptease/html-jsx/jsx-runtime';
+import { Children, PropsWithChildren, Renderable, raw } from '../src/index.js';
 
 describe('elements', () => {
   test('renders an element', () => {
