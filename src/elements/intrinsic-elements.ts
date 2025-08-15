@@ -83,98 +83,98 @@ export interface GlobalAttributes {
 }
 
 export interface GlobalEventHandlers {
-    onauxclick?: string;
-    onbeforeinput?: string;
-    onbeforematch?: string;
-    onbeforetoggle?: string;
-    onblur?: string;
-    oncancel?: string;
-    oncanplay?: string;
-    oncanplaythrough?: string;
-    onchange?: string;
-    onclick?: string;
-    onclose?: string;
-    oncommand?: string;
-    oncontextlost?: string;
-    oncontextmenu?: string;
-    oncontextrestored?: string;
-    oncopy?: string;
-    oncuechange?: string;
-    oncut?: string;
-    ondblclick?: string;
-    ondrag?: string;
-    ondragend?: string;
-    ondragenter?: string;
-    ondragleave?: string;
-    ondragover?: string;
-    ondragstart?: string;
-    ondrop?: string;
-    ondurationchange?: string;
-    onemptied?: string;
-    onended?: string;
-    onerror?: string;
-    onfocus?: string;
-    onformdata?: string;
-    oninput?: string;
-    oninvalid?: string;
-    onkeydown?: string;
-    onkeypress?: string;
-    onkeyup?: string;
-    onload?: string;
-    onloadeddata?: string;
-    onloadedmetadata?: string;
-    onloadstart?: string;
-    onmousedown?: string;
-    onmouseenter?: string;
-    onmouseleave?: string;
-    onmousemove?: string;
-    onmouseout?: string;
-    onmouseover?: string;
-    onmouseup?: string;
-    onpaste?: string;
-    onpause?: string;
-    onplay?: string;
-    onplaying?: string;
-    onprogress?: string;
-    onratechange?: string;
-    onreset?: string;
-    onresize?: string;
-    onscroll?: string;
-    onscrollend?: string;
-    onsecuritypolicyviolation?: string;
-    onseeked?: string;
-    onseeking?: string;
-    onselect?: string;
-    onslotchange?: string;
-    onstalled?: string;
-    onsubmit?: string;
-    onsuspend?: string;
-    ontimeupdate?: string;
-    ontoggle?: string;
-    onvolumechange?: string;
-    onwaiting?: string;
-    onwheel?: string;
+    onauxclick?: StringAttribute;
+    onbeforeinput?: StringAttribute;
+    onbeforematch?: StringAttribute;
+    onbeforetoggle?: StringAttribute;
+    onblur?: StringAttribute;
+    oncancel?: StringAttribute;
+    oncanplay?: StringAttribute;
+    oncanplaythrough?: StringAttribute;
+    onchange?: StringAttribute;
+    onclick?: StringAttribute;
+    onclose?: StringAttribute;
+    oncommand?: StringAttribute;
+    oncontextlost?: StringAttribute;
+    oncontextmenu?: StringAttribute;
+    oncontextrestored?: StringAttribute;
+    oncopy?: StringAttribute;
+    oncuechange?: StringAttribute;
+    oncut?: StringAttribute;
+    ondblclick?: StringAttribute;
+    ondrag?: StringAttribute;
+    ondragend?: StringAttribute;
+    ondragenter?: StringAttribute;
+    ondragleave?: StringAttribute;
+    ondragover?: StringAttribute;
+    ondragstart?: StringAttribute;
+    ondrop?: StringAttribute;
+    ondurationchange?: StringAttribute;
+    onemptied?: StringAttribute;
+    onended?: StringAttribute;
+    onerror?: StringAttribute;
+    onfocus?: StringAttribute;
+    onformdata?: StringAttribute;
+    oninput?: StringAttribute;
+    oninvalid?: StringAttribute;
+    onkeydown?: StringAttribute;
+    onkeypress?: StringAttribute;
+    onkeyup?: StringAttribute;
+    onload?: StringAttribute;
+    onloadeddata?: StringAttribute;
+    onloadedmetadata?: StringAttribute;
+    onloadstart?: StringAttribute;
+    onmousedown?: StringAttribute;
+    onmouseenter?: StringAttribute;
+    onmouseleave?: StringAttribute;
+    onmousemove?: StringAttribute;
+    onmouseout?: StringAttribute;
+    onmouseover?: StringAttribute;
+    onmouseup?: StringAttribute;
+    onpaste?: StringAttribute;
+    onpause?: StringAttribute;
+    onplay?: StringAttribute;
+    onplaying?: StringAttribute;
+    onprogress?: StringAttribute;
+    onratechange?: StringAttribute;
+    onreset?: StringAttribute;
+    onresize?: StringAttribute;
+    onscroll?: StringAttribute;
+    onscrollend?: StringAttribute;
+    onsecuritypolicyviolation?: StringAttribute;
+    onseeked?: StringAttribute;
+    onseeking?: StringAttribute;
+    onselect?: StringAttribute;
+    onslotchange?: StringAttribute;
+    onstalled?: StringAttribute;
+    onsubmit?: StringAttribute;
+    onsuspend?: StringAttribute;
+    ontimeupdate?: StringAttribute;
+    ontoggle?: StringAttribute;
+    onvolumechange?: StringAttribute;
+    onwaiting?: StringAttribute;
+    onwheel?: StringAttribute;
 }
 
 export interface BodyEventHandlers extends GlobalEventHandlers {
-    onafterprint?: string;
-    onbeforeprint?: string;
-    onbeforeunload?: string;
-    onhashchange?: string;
-    onlanguagechange?: string;
-    onmessage?: string;
-    onmessageerror?: string;
-    onoffline?: string;
-    ononline?: string;
-    onpagehide?: string;
-    onpagereveal?: string;
-    onpageshow?: string;
-    onpageswap?: string;
-    onpopstate?: string;
-    onrejectionhandled?: string;
-    onstorage?: string;
-    onunhandledrejection?: string;
-    onunload?: string;
+    onafterprint?: StringAttribute;
+    onbeforeprint?: StringAttribute;
+    onbeforeunload?: StringAttribute;
+    onhashchange?: StringAttribute;
+    onlanguagechange?: StringAttribute;
+    onmessage?: StringAttribute;
+    onmessageerror?: StringAttribute;
+    onoffline?: StringAttribute;
+    ononline?: StringAttribute;
+    onpagehide?: StringAttribute;
+    onpagereveal?: StringAttribute;
+    onpageshow?: StringAttribute;
+    onpageswap?: StringAttribute;
+    onpopstate?: StringAttribute;
+    onrejectionhandled?: StringAttribute;
+    onstorage?: StringAttribute;
+    onunhandledrejection?: StringAttribute;
+    onunload?: StringAttribute;
 }
 
 export interface Renderable {
@@ -326,7 +326,7 @@ export interface HtmlTagData extends GlobalAttributes, AriaAttributes, GlobalEve
 }
 
 export interface HtmlTagDatalist extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
-    children?: AnyContentCategory | HtmlTagOption | (AnyContentCategory | HtmlTagOption)[];
+    children?: AnyContentCategory | (AnyContentCategory)[];
 }
 
 export interface HtmlTagDd extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
@@ -444,7 +444,7 @@ export interface HtmlTagHeader extends GlobalAttributes, AriaAttributes, GlobalE
 }
 
 export interface HtmlTagHgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
-    children?: HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | AnyContentCategory | (HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | AnyContentCategory)[];
+    children?: HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | HtmlTagP | AnyContentCategory | (HtmlTagH1 | HtmlTagH2 | HtmlTagH3 | HtmlTagH4 | HtmlTagH5 | HtmlTagH6 | HtmlTagP | AnyContentCategory)[];
 }
 
 export interface HtmlTagHr extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
@@ -638,7 +638,7 @@ export interface HtmlTagOl extends GlobalAttributes, AriaAttributes, GlobalEvent
 export interface HtmlTagOptgroup extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
     disabled?: BooleanAttribute;
     label?: StringAttribute;
-    children?: HtmlTagOption | AnyContentCategory | (HtmlTagOption | AnyContentCategory)[];
+    children?: AnyContentCategory | HtmlTagLegend | (AnyContentCategory | HtmlTagLegend)[];
 }
 
 export interface HtmlTagOption extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
@@ -646,7 +646,7 @@ export interface HtmlTagOption extends GlobalAttributes, AriaAttributes, GlobalE
     label?: StringAttribute;
     selected?: BooleanAttribute;
     value?: StringAttribute;
-    children?: TextContent | (TextContent)[];
+    children?: TextContent | AnyContentCategory | (TextContent | AnyContentCategory)[];
 }
 
 export interface HtmlTagOutput extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
@@ -729,7 +729,11 @@ export interface HtmlTagSelect extends GlobalAttributes, AriaAttributes, GlobalE
     name?: StringAttribute;
     required?: BooleanAttribute;
     size?: NumericAttribute;
-    children?: HtmlTagOption | HtmlTagOptgroup | AnyContentCategory | (HtmlTagOption | HtmlTagOptgroup | AnyContentCategory)[];
+    children?: AnyContentCategory | HtmlTagButton | (AnyContentCategory | HtmlTagButton)[];
+}
+
+export interface HtmlTagSelectedcontent extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
+    children?: never;
 }
 
 export interface HtmlTagSlot extends GlobalAttributes, AriaAttributes, GlobalEventHandlers {
@@ -978,6 +982,7 @@ export namespace JSX {
         search: HtmlTagSearch;
         section: HtmlTagSection;
         select: HtmlTagSelect;
+        selectedcontent: HtmlTagSelectedcontent;
         slot: HtmlTagSlot;
         small: HtmlTagSmall;
         source: HtmlTagSource;

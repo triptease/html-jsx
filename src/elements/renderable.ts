@@ -1,4 +1,5 @@
 import { Attributes, Node } from './types.js';
+import * as ts from 'typescript';
 
 export interface Renderable {
   render(): string;
@@ -37,6 +38,45 @@ export function isRenderable(o: any): o is Renderable {
 
 export function raw(html: string): Raw {
   return new Raw(html);
+}
+
+function transpile(fn: Function, compilerOptions = {}) {
+  const source = ts.createSourceFile('snippet.ts', fn.toString(), ts.ScriptTarget.Latest);
+
+  if (source.statements.length !== 1) {
+    throw new Error(`Invalid argument, expected a single statement but got ${fn.toString()}`);
+  }
+
+  const statement = source.statements[0];
+  if (
+    !ts.isExpressionStatement(statement) ||
+    !(ts.isArrowFunction(statement.expression) || ts.isFunctionExpression(statement.expression))
+  ) {
+    throw new Error(`Invalid argument, expected an arrow function but got ${fn.toString()}`);
+  }
+
+  const body = statement.expression.body!;
+  const bodyText = ts.isBlock(body)
+    ? fn.toString().substring(body.statements.pos, body.statements.end)
+    : fn.toString().substring(body.pos, body.end);
+
+  const result = ts.transpileModule(bodyText, {
+    compilerOptions: {
+      target: ts.ScriptTarget.ES2020,
+      lib: ['dom', 'dom.iterable'],
+      ...compilerOptions,
+    },
+  });
+
+  return result.outputText;
+}
+
+export function transpileScript(fn: Function, compilerOptions = {}) {
+  return raw(transpile(fn, compilerOptions));
+}
+
+export function transpileAttr(fn: Function, compilerOptions = {}) {
+  return transpile(fn, compilerOptions);
 }
 
 function toKebabCase(name: string): string {

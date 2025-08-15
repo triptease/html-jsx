@@ -115,8 +115,8 @@ export const contentCategories: Map<string, {
         children: new Set(["flow"])
     }],
     ["div", {
-        categories: new Set(["flow", "palpable"]),
-        children: new Set(["flow"])
+        categories: new Set(["flow", "palpable", "select", "optgroup", "option"]),
+        children: new Set(["flow", "optgroup", "option"])
     }],
     ["dl", {
         categories: new Set(["flow", "palpable"]),
@@ -188,10 +188,10 @@ export const contentCategories: Map<string, {
     }],
     ["hgroup", {
         categories: new Set(["flow", "palpable"]),
-        children: new Set(["h1", "h2", "h3", "h4", "h5", "h6", "script-supporting"])
+        children: new Set(["h1", "h2", "h3", "h4", "h5", "h6", "p", "script-supporting"])
     }],
     ["hr", {
-        categories: new Set(["flow"]),
+        categories: new Set(["flow", "select"]),
         children: new Set([])
     }],
     ["html", {
@@ -267,7 +267,7 @@ export const contentCategories: Map<string, {
         children: new Set(["flow"])
     }],
     ["noscript", {
-        categories: new Set(["metadata", "flow", "phrasing"]),
+        categories: new Set(["metadata", "flow", "phrasing", "select", "optgroup"]),
         children: new Set(["varies"])
     }],
     ["object", {
@@ -279,12 +279,12 @@ export const contentCategories: Map<string, {
         children: new Set(["li", "script-supporting"])
     }],
     ["optgroup", {
-        categories: new Set(["none"]),
-        children: new Set(["option", "script-supporting"])
+        categories: new Set(["select"]),
+        children: new Set(["optgroup", "legend"])
     }],
     ["option", {
-        categories: new Set(["none"]),
-        children: new Set(["text"])
+        categories: new Set(["select", "optgroup"]),
+        children: new Set(["text", "option"])
     }],
     ["output", {
         categories: new Set(["flow", "phrasing", "listed", "labelable", "resettable", "form-associated", "palpable"]),
@@ -344,7 +344,11 @@ export const contentCategories: Map<string, {
     }],
     ["select", {
         categories: new Set(["flow", "phrasing", "interactive", "listed", "labelable", "submittable", "resettable", "form-associated", "palpable"]),
-        children: new Set(["option", "optgroup", "script-supporting"])
+        children: new Set(["select", "button"])
+    }],
+    ["selectedcontent", {
+        categories: new Set(["none"]),
+        children: new Set([])
     }],
     ["slot", {
         categories: new Set(["flow", "phrasing"]),

@@ -92,14 +92,14 @@ export async function intrinsicElements(
   sourceFile.addInterface({
     name: 'GlobalEventHandlers',
     isExported: true,
-    properties: globalEventHandlers.map((name) => ({ name, type: 'string', hasQuestionToken: true })),
+    properties: globalEventHandlers.map((name) => ({ name, type: 'StringAttribute', hasQuestionToken: true })),
   });
 
   sourceFile.addInterface({
     name: 'BodyEventHandlers',
     isExported: true,
     extends: ['GlobalEventHandlers'],
-    properties: bodyEventHandlers.map((name) => ({ name, type: 'string', hasQuestionToken: true })),
+    properties: bodyEventHandlers.map((name) => ({ name, type: 'StringAttribute', hasQuestionToken: true })),
   });
 
   sourceFile.addInterface({

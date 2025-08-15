@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { Children, jsx, PropsWithChildren, raw, Renderable } from '@triptease/html-jsx/jsx-runtime';
+import { Children, PropsWithChildren, Renderable, raw } from '@triptease/html-jsx/jsx-runtime';
 
 describe('elements', () => {
   test('renders an element', () => {
@@ -92,7 +92,8 @@ describe('elements', () => {
     'track',
     'wbr',
   ])(`void element %s does not have a closing tag`, (tag: string) => {
-    expect(`${jsx(tag, null)}`).toEqual(`<${tag}>`);
+    const Element = tag as any;
+    expect(`${(<Element />)}`).toEqual(`<${tag}>`);
   });
 });
 

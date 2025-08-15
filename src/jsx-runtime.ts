@@ -2,7 +2,7 @@ import { AttributesWithChildren, Fragment } from './elements/types.js';
 import { Element } from './elements/renderable.js';
 
 export { PropsWithChildren, Children, Node, Fragment } from './elements/types.js';
-export { raw } from './elements/renderable.js';
+export { raw, transpileAttr, transpileScript } from './elements/renderable.js';
 export type * from './elements/intrinsic-elements.js';
 
 export interface JSXComponent {

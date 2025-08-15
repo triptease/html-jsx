@@ -7,4 +7,7 @@ export default defineConfig({
       '@triptease/html-jsx': path.resolve(__dirname, '../src'),
     },
   },
+  test: {
+    setupFiles: [path.resolve(__dirname, './setup.ts')],
+  },
 });
