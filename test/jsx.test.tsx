@@ -55,9 +55,9 @@ describe('elements', () => {
     expect(`${(<span>{new MyRenderable()}</span>)}`).toEqual('<span>Custom rendering</span>');
   });
 
-  test('renders a web component with custom attributes', () => {
-    expect(`${(<some-web-component someAttribute="data">Foo</some-web-component>)}`).toEqual(
-      '<some-web-component some-attribute="data">Foo</some-web-component>',
+  test('renders a custom element with custom attributes', () => {
+    expect(`${(<some-custom-element someAttribute="data">Foo</some-custom-element>)}`).toEqual(
+      '<some-custom-element some-attribute="data">Foo</some-custom-element>',
     );
   });
 
@@ -193,7 +193,7 @@ describe('raw', () => {
 declare module '@triptease/html-jsx/jsx-runtime' {
   namespace JSX {
     interface IntrinsicElements {
-      'some-web-component': {
+      'some-custom-element': {
         someAttribute: string;
         children?: Children;
       };

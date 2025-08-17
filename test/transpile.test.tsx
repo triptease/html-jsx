@@ -8,17 +8,30 @@ describe('transpiles script', () => {
       `${(
         <script>
           {transpileScript(() => {
-            const a: string = 'foo';
+            const foo = 'bar' as string;
           })}
         </script>
       )}`,
-    ).toEqualIgnoringFormatting(`<script>const a = "foo";</script>`);
+    ).toEqualIgnoringFormatting(`<script>const foo = "bar";</script>`);
   });
 
   test('with arrow function without parentheses', () => {
     expect(`${(<script>{transpileScript(() => 'foo' as string)}</script>)}`).toEqualIgnoringFormatting(
       '<script>"foo";</script>',
     );
+  });
+
+  test('with function declaration', () => {
+    expect(
+      `${(
+        <script>
+          {transpileScript(function () {
+            // eslint-disable-next-line
+            const foo = 'bar' as string;
+          })}
+        </script>
+      )}`,
+    ).toEqualIgnoringFormatting('<script>const foo = "bar";</script>');
   });
 
   test('with DOM APIs in transpilation', () => {
@@ -69,27 +82,19 @@ describe('transpiles script', () => {
 describe('transpiles attributes', () => {
   test('event handler', () => {
     expect(
-      `${(<input onchange={transpileAttr((e: Event) => console.log((e.target as HTMLInputElement).value))} />)}`,
-    ).toEqualIgnoringFormatting('<input onchange="console.log(e.target.value);">');
+      `${(<input onchange={transpileAttr((event: Event) => console.log((event.target as HTMLInputElement).value))} />)}`,
+    ).toEqualIgnoringFormatting('<input onchange="console.log(event.target.value);">');
+  });
+
+  test('event handler can reference this', () => {
+    expect(
+      `${(<input onchange={transpileAttr(function (this: HTMLInputElement) { console.log((this.value))})} />)}`,
+    ).toEqualIgnoringFormatting('<input onchange="console.log(this.value);">');
   });
 
   test('escapes quotes', () => {
-    expect(`${(<input onchange={transpileAttr((e: Event) => console.log('foo'))} />)}`).toEqualIgnoringFormatting(
+    expect(`${(<input onchange={transpileAttr(() => console.log('foo'))} />)}`).toEqualIgnoringFormatting(
       '<input onchange="console.log(&quot;foo&quot;);">',
-    );
-  });
-});
-
-describe('invalid arguments', () => {
-  test('does not accept a function definition', () => {
-    expect(() => `${(<script>{transpileScript(function () {})}</script>)}`).toThrow(
-      /^Invalid argument, expected an arrow function but got/,
-    );
-  });
-
-  test('does not accept a function constructor', () => {
-    expect(() => `${(<script>{transpileScript(new Function())}</script>)}`).toThrow(
-      /^Invalid argument, expected an arrow function but got/,
     );
   });
 });

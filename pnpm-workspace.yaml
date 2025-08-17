@@ -1,4 +1,7 @@
 packages:
-  - 'generate'
-  - 'src'
-  - 'test'
+  - generate
+  - src
+  - test
+
+onlyBuiltDependencies:
+  - esbuild

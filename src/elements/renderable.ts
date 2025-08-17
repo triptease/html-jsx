@@ -1,5 +1,6 @@
 import { Attributes, Node } from './types.js';
 import * as ts from 'typescript';
+import { isExpressionStatement } from 'typescript';
 
 export interface Renderable {
   render(): string;
@@ -48,14 +49,19 @@ function transpile(fn: Function, compilerOptions = {}) {
   }
 
   const statement = source.statements[0];
-  if (
-    !ts.isExpressionStatement(statement) ||
-    !(ts.isArrowFunction(statement.expression) || ts.isFunctionExpression(statement.expression))
+
+  let body: ts.Block | ts.ConciseBody;
+  if (ts.isFunctionDeclaration(statement) && statement.body) {
+    body = statement.body;
+  } else if (
+    isExpressionStatement(statement) &&
+    (ts.isArrowFunction(statement.expression) || ts.isFunctionExpression(statement.expression))
   ) {
-    throw new Error(`Invalid argument, expected an arrow function but got ${fn.toString()}`);
+    body = statement.expression.body;
+  } else {
+    throw new Error(`Invalid argument, expected a function but got ${fn.toString()}`);
   }
 
-  const body = statement.expression.body!;
   const bodyText = ts.isBlock(body)
     ? fn.toString().substring(body.statements.pos, body.statements.end)
     : fn.toString().substring(body.pos, body.end);
