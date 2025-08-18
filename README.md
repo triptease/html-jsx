@@ -21,3 +21,15 @@ corepack enable
 pnmp install
 pnpm run build
 ```
+
+# Releasing new versions
+
+You must have access to the Triptease npm account to do this.
+
+Only the src package is published, and the process is manual for now.
+
+1. Update the version in package.json removing the `-dev` suffix and changing the minor or major versions if required.
+2. Commit and push the changes
+3. From src, run `npm publish`
+4. Bump the version in package.json to the next patch version and add the `-dev` suffix 
+5. Commit and push the changes
