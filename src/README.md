@@ -8,7 +8,7 @@ template engines with type checking for HTML.
 - Faster than traditional template engines since most of the work is done by the TypeScript compiler.
 - Type checking for HTML using type definitions generated from the WHATWG Living Standard.
 - It's secure. Escaping of tag contents and attributes to avoid XSS attacks.
-- HTML structure validation using WHATWG content categories.
+- Validation of HTML structure using WHATWG content categories.
 
 ## Getting started
 
@@ -17,11 +17,10 @@ Add the package as a dev dependency
 npm add -D @triptease/html-jsx
 ```
 
-Add the JSX factory into `tsconfig.json`
+Add the JSX configuration into the compiler options in `tsconfig.json`
 ```json
 {
   "compilerOptions": {
-    ...
     "jsx": "react-jsx",
     "jsxImportSource": "@triptease/html-jsx"
   }
@@ -50,40 +49,31 @@ function greet(name: string) {
 
 ```tsx
 <h7></h7>
-```
 
-Error
-```
-TS2339: Property h7 does not exist on type JSX.IntrinsicElements
+// TS2339: Property h7 does not exist on type JSX.IntrinsicElements
 ```
 
 **Invalid HTML attributes are caught at compile time**
 
 ```tsx
 <div classs="my-class"></div>
-```
 
-Error
-```
-TS2322: Type { classs: string; } is not assignable to type HtmlTagDiv
-Property 'classs' does not exist on type HtmlTagDiv. Did you mean 'class'?
+// TS2322: Type { classs: string; } is not assignable to type HtmlTagDiv
+// Property 'classs' does not exist on type HtmlTagDiv. Did you mean 'class'?
 ```
 
 **HTML attributes are type-checked**
 
 ```tsx
 <input required="falsey"></input>
-```
 
-Error
-```
-TS2820: Type 'falsey' is not assignable to type BooleanAttribute | undefined. Did you mean 'false'?
+// TS2820: Type 'falsey' is not assignable to type BooleanAttribute | undefined. Did you mean 'false'?
 ```
 
 
 ### Structural HTML validation
 
-Some limited validation of HTML structure using the WHATWG content categories is applied at runtime when NODE_ENV is set to 'development'.
+Validation of HTML structure using the WHATWG content categories is applied at runtime when NODE_ENV is set to `development`.
 
 ```tsx
 <span>
@@ -106,8 +96,8 @@ import { raw } from '@triptease/html-jsx';
 
 const content = '<script>arbitraryCode()</script>';
 
-{content} // Outputs &lt;script&gt;arbitraryCode()&lt;&#x2F;script&gt;
-{raw(content)} // Outputs <script>arbitraryCode()</script>
+<div>{content}</div> // Outputs <div>&lt;script&gt;arbitraryCode()&lt;&#x2F;script&gt</div>;
+<div>{raw(content)}</div> // Outputs <div><script>arbitraryCode()</script></div>
 ```
 
 Attribute escaping can also be disabled
