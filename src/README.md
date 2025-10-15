@@ -110,10 +110,26 @@ import { raw } from '@triptease/html-jsx';
 ```
 
 
-### Embedded Javascript
+### Inline Javascript
 
-TypeScript can be transpiled to JavaScript and embedded in HTML. This allows you to write TypeScript code in your tsx 
+TypeScript can be transpiled to JavaScript and inlined in HTML. This allows you to write TypeScript code in your tsx 
 files and benefit from syntax highlighting and compiler and linter warnings from your IDE.
+
+This happens at compile time so there is no runtime overhead. It uses a Custom Typescript Transformer. 
+This must be configured to work with your build. 
+Currently, only a Vite plugin is available. A plugin for Bun will be coming soon.
+
+To configure with Vite simply add the plugin to your vite config.
+
+```ts
+import { defineConfig } from 'vitest/config';
+import { transpileVitePlugin } from '@triptease/html-jsx';
+
+export default defineConfig({
+  plugins: [transpileVitePlugin()],
+  ...
+});
+```
 
 Use the `transpileScript` function passing it an arrow function to transpile the body of the function.
 
