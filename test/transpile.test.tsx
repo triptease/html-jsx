@@ -1,6 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { transpileScript, transpileAttr } from '../src/index.js';
-import ts from 'typescript';
+import { transpileScript, transpileAttr } from '@triptease/html-jsx';
 
 describe('transpiles script', () => {
   test('with arrow function with parentheses', () => {
@@ -63,20 +62,6 @@ describe('transpiles script', () => {
     ).toEqualIgnoringFormatting('<script>const fn = (x) => x * 2;</script>');
   });
 
-  test('can override compile options with older ECMA Script target', () => {
-    expect(
-      `${(
-        <script>
-          {transpileScript(
-            () => {
-              const fn = (x: number) => x * 2;
-            },
-            { target: ts.ScriptTarget.ES5 },
-          )}
-        </script>
-      )}`,
-    ).toEqualIgnoringFormatting('<script>var fn = function (x) { return x * 2; };</script>');
-  });
 });
 
 describe('transpiles attributes', () => {

@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "@triptease/html-jsx": "workspace:*",
-    "vitest": "^3.1.1"
+    "vitest": "^3.2.4"
   }
 }

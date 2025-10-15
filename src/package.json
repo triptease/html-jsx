@@ -36,5 +36,13 @@
     "html",
     "template",
     "typescript"
-  ]
+  ],
+  "peerDependencies": {
+    "vite": ">=2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vite": {
+      "optional": true
+    }
+  }
 }
