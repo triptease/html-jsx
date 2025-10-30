@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { Children, PropsWithChildren, Renderable, raw } from '../src/index.js';
+import { Children, PropsWithChildren, Renderable, raw, js, jsAttr } from '../src/index.js';
 
 describe('elements', () => {
   test('renders an element', () => {
@@ -61,7 +61,7 @@ describe('elements', () => {
     );
   });
 
-  test('arrays of elements are flatten', () => {
+  test('arrays of elements are flattened', () => {
     const arrayOfElements = [<p>Foo</p>, <p>Bar</p>];
     const element = <p>Baz</p>;
     expect(
@@ -73,7 +73,9 @@ describe('elements', () => {
       )}`,
     ).toEqual('<div><p>Foo</p><p>Bar</p><p>Baz</p></div>');
   });
+});
 
+describe('void element', () => {
   test.each([
     'area',
     'base',
@@ -94,6 +96,54 @@ describe('elements', () => {
   ])(`void element %s does not have a closing tag`, (tag: string) => {
     const Element = tag as any;
     expect(`${(<Element />)}`).toEqual(`<${tag}>`);
+  });
+});
+
+describe('javascript', () => {
+  test('renders a javascript arrow function', () => {
+    const fn = () => console.log('embedded JS');
+    expect(`${(<script>{js(fn)}</script>)}`).toEqual('<script>console.log("embedded JS")</script>');
+    expect(`${(<div onclick={jsAttr(fn)}></div>)}`).toEqual(
+      '<div onclick="console.log(&quot;embedded JS&quot;)"></div>',
+    );
+  });
+
+  test.each([
+    [
+      'arrow function with braces',
+      () => {
+        console.log('embedded JS');
+      },
+    ],
+    [
+      'anonymous function',
+      function () {
+        console.log('embedded JS');
+      },
+    ],
+    [
+      'named function expression',
+      function myFunc() {
+        console.log('embedded JS');
+      },
+    ],
+    [
+      'async arrow function',
+      async () => {
+        console.log('embedded JS');
+      },
+    ],
+    [
+      'async anonymous function',
+      async function () {
+        console.log('embedded JS');
+      },
+    ],
+  ])('renders a javascript %s', (_, fn) => {
+    expect(`${(<script>{js(fn)}</script>)}`).toEqual('<script>console.log("embedded JS");</script>');
+    expect(`${(<div onclick={jsAttr(fn)}></div>)}`).toEqual(
+      '<div onclick="console.log(&quot;embedded JS&quot;);"></div>',
+    );
   });
 });
 

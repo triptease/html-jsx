@@ -14,9 +14,9 @@ importers:
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
-      vite:
-        specifier: ^7.1.9
-        version: 7.1.10(@types/node@22.15.17)(tsx@4.19.4)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@22.15.17)(tsx@4.19.4)
 
   generate:
     devDependencies:
@@ -516,9 +516,6 @@ packages:
   linkedom@0.18.10:
     resolution: {integrity: sha512-ESCqVAtme2GI3zZnlVRidiydByV6WmPlmKeFzFVQslADiAO2Wi+H6xL/5kr/pUOESjEoVb2Eb3cYFJ/TQhQOWA==}
 
-  loupe@3.1.3:
-    resolution: {integrity: sha512-kkIp7XSkP78ZxJEsSxW3712C6teJVoeHHwgo9zJ380de7IYyJ2ISlxojcH2pC5OFLewESmnRi/+XCDIEEVyoug==}
-
   loupe@3.2.1:
     resolution: {integrity: sha512-CdzqowRJCeLU72bHvWqwRBBlLcMEtIvGrlvef74kMnV2AolS9Y8xUv1I0U/MNAWMhBlKIoyuEgoJ0t/bbwHbLQ==}
 
@@ -973,7 +970,7 @@ snapshots:
       assertion-error: 2.0.1
       check-error: 2.1.1
       deep-eql: 5.0.2
-      loupe: 3.1.3
+      loupe: 3.2.1
       pathval: 2.0.0
 
   check-error@2.1.1: {}
@@ -1113,8 +1110,6 @@ snapshots:
       html-escaper: 3.0.3
       htmlparser2: 10.0.0
       uhyphen: 0.2.0
-
-  loupe@3.1.3: {}
 
   loupe@3.2.1: {}
 
