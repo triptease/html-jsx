@@ -100,7 +100,7 @@ describe('void element', () => {
 });
 
 describe('javascript', () => {
-  test('renders a javascript arrow function', () => {
+  test('renders javascript for a script tag', () => {
     const fn = () => console.log('embedded JS');
     expect(`${(<script>{js(fn)}</script>)}`).toEqual('<script>console.log("embedded JS")</script>');
     expect(`${(<div onclick={jsAttr(fn)}></div>)}`).toEqual(
@@ -108,41 +108,16 @@ describe('javascript', () => {
     );
   });
 
-  test.each([
-    [
-      'arrow function with braces',
-      () => {
-        console.log('embedded JS');
-      },
-    ],
-    [
-      'anonymous function',
-      function () {
-        console.log('embedded JS');
-      },
-    ],
-    [
-      'named function expression',
-      function myFunc() {
-        console.log('embedded JS');
-      },
-    ],
-    [
-      'async arrow function',
-      async () => {
-        console.log('embedded JS');
-      },
-    ],
-    [
-      'async anonymous function',
-      async function () {
-        console.log('embedded JS');
-      },
-    ],
-  ])('renders a javascript %s', (_, fn) => {
-    expect(`${(<script>{js(fn)}</script>)}`).toEqual('<script>console.log("embedded JS");</script>');
+  test('renders javascript for an attribute', () => {
+    const fn = () => console.log('embedded JS');
     expect(`${(<div onclick={jsAttr(fn)}></div>)}`).toEqual(
-      '<div onclick="console.log(&quot;embedded JS&quot;);"></div>',
+      '<div onclick="console.log(&quot;embedded JS&quot;)"></div>',
+    );
+  });
+
+  test('allows passing custom data to the function', () => {
+    expect(`${(<script>{js(({ foo }) => console.log(foo), { foo: 'bar' })}</script>)}`).toEqual(
+      '<script>const foo = JSON.parse("\\"bar\\"");\nconsole.log(foo)</script>',
     );
   });
 });

@@ -39,22 +39,6 @@ export function raw(html: string): Raw {
   return new Raw(html);
 }
 
-function fnBody(fn: Function) {
-  const match = fn.toString().match(/^[^{]*\{\s*([\s\S]*?)\s*}[^}]*$|^[^=]*=>\s*(.*?)$/);
-  if (!match) {
-    throw new Error(`Invalid js function: ${fn.toString()}`);
-  }
-  return match[1] ?? match[2];
-}
-
-export function js(fn: Function) {
-  return raw(fnBody(fn));
-}
-
-export function jsAttr(fn: Function) {
-  return fnBody(fn);
-}
-
 function toKebabCase(name: string): string {
   return name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
 }

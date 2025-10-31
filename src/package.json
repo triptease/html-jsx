@@ -1,6 +1,6 @@
 {
   "name": "@triptease/html-jsx",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "JSX implementation for generating static HTML",
   "license": "MIT",
   "author": "Triptease",
@@ -29,6 +29,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
+    "test": "vitest",
     "prepublishOnly": "pnpm run clean && pnpm run build"
   },
   "keywords": [
@@ -37,6 +38,9 @@
     "template",
     "typescript"
   ],
+  "devDependencies": {
+    "vitest": "^4.0.5"
+  },
   "peerDependencies": {
     "vite": ">=2.0.0"
   },
