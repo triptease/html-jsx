@@ -112,58 +112,7 @@ import { raw } from '@triptease/html-jsx';
 
 ### Inline Javascript
 
-TypeScript can be transpiled to JavaScript and inlined in HTML. This allows you to write TypeScript code in your tsx 
-files and benefit from syntax highlighting and compiler and linter warnings from your IDE.
-
-This happens at compile time so there is no runtime overhead. It uses a Custom Typescript Transformer. 
-This must be configured to work with your build. 
-Currently, only a Vite plugin is available. A plugin for Bun will be coming soon.
-
-To configure with Vite simply add the plugin to your vite config.
-
-```ts
-import { defineConfig } from 'vitest/config';
-import { transpileVitePlugin } from '@triptease/html-jsx';
-
-export default defineConfig({
-  plugins: [transpileVitePlugin()],
-  ...
-});
-```
-
-Use the `transpileScript` function passing it an arrow function to transpile the body of the function.
-
-```tsx
-import { transpileScript } from '@triptease/html-jsx';
-
-<script>
-    {transpileScript(() => {
-        const element: HTMLElement = document.getElementById('test') as HTMLElement;
-        element.classList.add('active');
-    })}
-</script>
-```
-
-Outputs
-```html
-<script>
-    const element = document.getElementById('test');
-    element.classList.add('active');
-</script>
-```
-
-TypeScript can also be transpiled within an element attribute using `transpileAttribute`.
-
-```tsx
-import { transpileAttribute } from '@triptease/html-jsx';
-
-<input onchange={transpileAttr((event: Event) => console.log((event.target as HTMLInputElement).value))} />
-```
-
-Outputs
-```html
-<input onchange="console.log(event.target.value);">
-```
+TODO: Add documentation
 
 
 ### Extend with Custom Elements
