@@ -1,6 +1,6 @@
 {
   "name": "@triptease/html-jsx",
-  "version": "0.2.5-dev",
+  "version": "0.2.5",
   "description": "JSX implementation for generating static HTML",
   "license": "MIT",
   "author": "Triptease",

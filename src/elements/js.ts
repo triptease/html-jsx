@@ -44,9 +44,7 @@ function findMatching(str: string, start: number): number {
 function fnBody(fn: Function, args?: Record<string, any>) {
   const body = extractBody(fn);
   if (args) {
-    const inlineData = Object.entries(args)
-      .map(([key, value]) => `const ${key} = JSON.parse(${JSON.stringify(JSON.stringify(value))});`)
-      .join('\n');
+    const inlineData = `const args = JSON.parse(${JSON.stringify(JSON.stringify(args))});`;
     return `${inlineData}\n${body}`;
   } else {
     return body;

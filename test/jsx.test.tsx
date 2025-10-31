@@ -116,8 +116,8 @@ describe('javascript', () => {
   });
 
   test('allows passing custom data to the function', () => {
-    expect(`${(<script>{js(({ foo }) => console.log(foo), { foo: 'bar' })}</script>)}`).toEqual(
-      '<script>const foo = JSON.parse("\\"bar\\"");\nconsole.log(foo)</script>',
+    expect(`${(<script>{js((args) => console.log(args.foo), { foo: 'bar' })}</script>)}`).toEqual(
+      '<script>const args = JSON.parse("{\\"foo\\":\\"bar\\"}");\nconsole.log(args.foo)</script>',
     );
   });
 });
