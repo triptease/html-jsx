@@ -54,7 +54,10 @@ function getAttributeType(value: string) {
   }
 }
 
-const globalAttributes: Attribute[] = [];
+const missingAttributes = [
+  { name: 'part', type: AttributeType.Text }, // Contained in CSS spec but not in HTML spec. https://www.w3.org/TR/css-shadow-parts-1/#part-attr
+];
+const globalAttributes: Attribute[] = missingAttributes;
 
 document.querySelectorAll('#attributes-1 tbody th').forEach((e) => {
   const name = e.textContent!.trim();

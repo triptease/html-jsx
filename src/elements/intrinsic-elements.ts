@@ -51,6 +51,7 @@ export interface AriaAttributes {
 }
 
 export interface GlobalAttributes {
+    part?: StringAttribute;
     accesskey?: StringAttribute;
     autocapitalize?: StringAttribute;
     autocorrect?: StringAttribute;
