@@ -18,7 +18,7 @@ No surprises here.
 ```shell
 nvm install --lts
 corepack enable
-pnmp install
+pnpm install
 pnpm run build
 ```
 
