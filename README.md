@@ -3,8 +3,8 @@
 Generate static HTML from JSX/TSX templates. The perfect solution to server side rendering of HTML, more performant than
 template engines with type checking for HTML.
 
-This is a mono repository that contains packages used to build and test html-jsx. If you are interested in the published 
-packages, see the [src](src) package.
+This is a mono repository that contains packages used to build and test html-jsx. If you are interested using the 
+library, see the src package [README](src/README.md).
 
 The other packages are:
 

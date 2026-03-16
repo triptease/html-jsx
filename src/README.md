@@ -106,13 +106,49 @@ Attribute escaping can also be disabled
 import { raw } from '@triptease/html-jsx';
 
 <hr data-x={raw('&')} /> // Outputs <hr data-x="&" />
-<hr data-x={'&'} /> // Outputs <hr data-x="&amp;" />
+<hr data-x={'&'} /> // Outputs <hr data-x="&amp;amp" />
 ```
 
 
 ### Inline Javascript
 
-TODO: Add documentation
+Embed TypeScript/JavaScript directly in your templates as real functions instead of strings. This means you get
+full IDE support — autocompletion, type checking, and refactoring — for your inline scripts and event handlers.
+
+Use `js()` to embed JavaScript inside `<script>` tags:
+
+```tsx
+import { js } from '@triptease/html-jsx';
+
+const fn = () => console.log('embedded JS');
+
+<script>{js(fn)}</script>
+// Outputs <script>console.log("embedded JS")</script>
+```
+
+Use `jsAttr()` to embed JavaScript in event handler attributes:
+
+```tsx
+import { jsAttr } from '@triptease/html-jsx';
+
+const fn = () => console.log('embedded JS');
+
+<div onclick={jsAttr(fn)}></div>
+// Outputs <div onclick="console.log(&quot;embedded JS&quot;)"></div>
+```
+
+Pass data from the server to the client using the `args` parameter. The data is serialized as JSON and
+made available to the function body via the `args` object:
+
+```tsx
+import { js } from '@triptease/html-jsx';
+
+<script>{js((args) => console.log(args.foo), { foo: 'bar' })}</script>
+// Outputs <script>const args = JSON.parse("{\"foo\":\"bar\"}");
+// console.log(args.foo)</script>
+```
+
+
 
 
 ### Extend with Custom Elements
