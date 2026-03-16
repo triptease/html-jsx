@@ -2,6 +2,7 @@ import { AttributesWithChildren, Fragment } from './elements/types.js';
 import { Element } from './elements/renderable.js';
 
 export type * from './elements/intrinsic-elements.js';
+export { Fragment };
 
 export interface JSXComponent {
   (attributes: AttributesWithChildren | null): Element;
